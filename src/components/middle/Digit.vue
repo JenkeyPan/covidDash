@@ -94,7 +94,6 @@ export default {
                         addNum: all.chinaAdd.importedCase,
                         num: all.chinaTotal.importedCase
                     }
-                    console.log(confirm)
                     //将获取的信息存取到information中
                     that.$set(that.information,"localConfirm",localConfirm)
                     that.$set(that.information,"dead", dead)

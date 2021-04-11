@@ -5,7 +5,6 @@
       <span>{{info.addNum}}</span>
     </div >
     <div class = "number">
-      <span></span>
       {{info.num}}
     </div>
     <div class = "text">

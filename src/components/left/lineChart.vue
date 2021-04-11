@@ -16,13 +16,13 @@ import jsonp from 'jsonp'
 export default {
   name: 'lineChart',
   mounted () {
-    this.getTest()
+   //this.getTest()
   },
   methods: {
     getTest () {
-      jsonp('https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5', {}, (err, result) => {
+      jsonp('https://view.inews.qq.com/g2/getOnsInfo?name=disease_other', {}, (err, result) => {
         if (!err) {
-          //console.log(JSON.parse(result.data))
+          console.log(JSON.parse(result.data))
         }
       })
     },
