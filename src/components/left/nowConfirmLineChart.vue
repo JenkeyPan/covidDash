@@ -1,7 +1,7 @@
 <template>
   <el-row>
         <el-col>
-            <div class="grid-content bg-purple">
+            <div class="grid-content">
                 <div id="nowConfirmLineChart"></div>
             </div>
         </el-col>

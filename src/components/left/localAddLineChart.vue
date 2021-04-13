@@ -1,7 +1,7 @@
 <template>
   <el-row>
         <el-col>
-            <div class="grid-content bg-purple">
+            <div class="grid-content">
                 <div id="localAddLineChart"></div>
             </div>
         </el-col>
@@ -21,7 +21,7 @@ export default {
         if (!err) {
           let data = JSON.parse(result.data)
           console.log('本土新增趋势')
-          console.log(data)
+          // console.log(data)
           let dateList = []//横坐标--日期
           let localAddConfirmList = []//纵坐标--数字
           for(let i = 0; i < data.chinaDayAddList.length; i++) {

@@ -20,7 +20,14 @@ export default {
 </script>
 <style>
 
-.all{
+.add{
+  color: rgba(240, 248, 255, 0.356);
+}
+.number{
+  color:aliceblue;
+  font-size:xx-large ;
+}
+.text{
   color: aliceblue;
 }
 </style>

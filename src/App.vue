@@ -1,14 +1,19 @@
 <template>
   <div id="app">
-    <HelloWorld/>
-    <chinaMap/>
-    <WorldMap/>
+    <router-view/>
+    
+    
+    
+    <!-- <WorldMap/>
     <WorldAddMap/>
-    <lineChart/>
-    <LocalAddLineChart/>
-    <NowConfirmLineChart/>
-    <AddTrendLineChart/>
-    <Digit/>
+    
+    
+    
+    
+    
+    <WorldDigit/>
+    <WorldAddLineChart/>
+    <WorldAddTrendLineChart/> -->
   </div>
 </template>
 
@@ -22,6 +27,11 @@ import NowConfirmLineChart from './components/left/nowConfirmLineChart';
 import AddTrendLineChart from './components/addTrendLineChart';
 import WorldMap from './components/worldMap';
 import WorldAddMap from './components/worldAddMap'
+import WorldDigit from './components/worldDigit'
+import WorldAddLineChart from './components/worldAddLineChart'
+import WorldAddTrendLineChart from './components/worldAddTrendLineChart'
+import WorldTopTenBarChart from './components/worldTopTenBarChart'
+import ChinaNews from './components/chinaNews'
 export default {
   name: 'App',
   components: {
@@ -33,16 +43,18 @@ export default {
     NowConfirmLineChart,
     AddTrendLineChart,
     WorldMap,
-    WorldAddMap
+    WorldAddMap,
+    WorldDigit,
+    WorldAddLineChart,
+    WorldAddTrendLineChart,
+    WorldTopTenBarChart,
+    ChinaNews
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-image: url("~@/assets/background.png");
 }
 </style>

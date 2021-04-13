@@ -1,44 +1,35 @@
 <template>
 <el-row >
-  <el-col :span="8">
-    <div class="grid-content bg-purple">
-        <Cube v-bind:info = "information.localConfirm"></Cube>
-    </div>
-  </el-col>
-  <el-col :span="8">
+  <el-col :span="6">
     <div class="grid-content bg-purple">
         <Cube v-bind:info = "information.nowConfirm"></Cube>
     </div>
   </el-col>
-  <el-col :span="8">
+  <el-col :span="6">
     <div class="grid-content bg-purple">
         <Cube v-bind:info = "information.confirm"></Cube>
     </div>
   </el-col>
-  <el-col :span="8">
+  <el-col :span="6">
     <div class="grid-content bg-purple">
-        <Cube v-bind:info = "information.noInfect"></Cube>
+        <Cube v-bind:info = "information.heal"></Cube>
     </div>
   </el-col>
-  <el-col :span="8">
-    <div class="grid-content bg-purple">
-        <Cube v-bind:info = "information.importedCase"></Cube>
-    </div>
-  </el-col>
-  <el-col :span="8">
+  <el-col :span="6">
     <div class="grid-content bg-purple">
         <Cube v-bind:info = "information.dead"></Cube>
     </div>
   </el-col>
+ 
 </el-row>
 </template>
 <script>
-import Cube from './Cube'
+import Cube from './middle/Cube'
 import $ from 'jquery'
 import jsonp from 'jsonp'
 
 export default {
-    name: 'Digit',
+    name: 'WorldDigit',
     components: { //方块中的数据
         Cube 
     },
@@ -60,47 +51,37 @@ export default {
             $.ajax({
                 type: 'GET',
                 dataType: "jsonp",
-                url: 'https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5',
+                url: 'https://view.inews.qq.com/g2/getOnsInfo?name=disease_foreign',
                 success: function(result) {
                     let all = JSON.parse(result.data)
+                    console.log("世界疫情数据")
                     console.log(all)
-                    let localConfirm = {
-                        txt : '本土现有确诊',
-                        addNum : all.chinaAdd.localConfirm,
-                        num : all.chinaTotal.localConfirm
-                    }
+                  
                     let dead = {
                         txt: '累计死亡',
-                        addNum: all.chinaAdd.dead,
-                        num : all.chinaTotal.dead
-                    }
-                    let noInfect = {
-                        txt : '无症状感染者',
-                        addNum: all.chinaAdd.noInfect,
-                        num: all.chinaTotal.noInfect
+                        addNum: all.globalStatis.deadAdd,
+                        num : all.globalStatis.dead
                     }
                     let nowConfirm = {
                         txt : '现有确诊',
-                        addNum: all.chinaAdd.nowConfirm,
-                        num: all.chinaTotal.nowConfirm
+                        addNum: all.globalStatis.nowConfirmAdd,
+                        num: all.globalStatis.nowConfirm
                     }
                     let confirm = {
                         txt: '累计确诊',
-                        addNum: all.chinaAdd.confirm,
-                        num: all.chinaTotal.confirm
+                        addNum: all.globalStatis.confirmAdd,
+                        num: all.globalStatis.confirm
                     }
-                    let importedCase = {
-                        txt: '输入病例',
-                        addNum: all.chinaAdd.importedCase,
-                        num: all.chinaTotal.importedCase
+                    let heal = {
+                        txt: '累计治愈',
+                        addNum: all.globalStatis.healAdd,
+                        num: all.globalStatis.heal
                     }
                     //将获取的信息存取到information中
-                    that.$set(that.information,"localConfirm",localConfirm)
                     that.$set(that.information,"dead", dead)
-                    that.$set(that.information,"noInfect", noInfect)
+                    that.$set(that.information,"heal", heal)
                     that.$set(that.information,"nowConfirm", nowConfirm)
                     that.$set(that.information,"confirm", confirm)
-                    that.$set(that.information,"importedCase", importedCase)
                 },
                 error: function(){
                     console.log("读取数据失败，digit.js")

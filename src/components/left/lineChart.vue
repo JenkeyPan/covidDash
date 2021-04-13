@@ -1,7 +1,7 @@
 <template>
     <el-row>
         <el-col>
-            <div class="grid-content bg-purple">
+            <div class="grid-content">
                 <div id="chinaLineChart"></div>
             </div>
         </el-col>
@@ -16,16 +16,9 @@ import jsonp from 'jsonp'
 export default {
   name: 'lineChart',
   mounted () {
-   //this.getTest()
+   this.getData()
   },
   methods: {
-    getTest () {
-      jsonp('https://view.inews.qq.com/g2/getOnsInfo?name=disease_other', {}, (err, result) => {
-        if (!err) {
-          console.log(JSON.parse(result.data))
-        }
-      })
-    },
     getData () {
       jsonp('https://interface.sina.cn/news/wap/fymap2020_data.d.json?_=1580892522427', {}, (err, result) => {
         if (!err) {
@@ -46,15 +39,19 @@ export default {
           let myChart = echarts.init(document.getElementById('chinaLineChart'))
           const option = {
             title: {
-              text: '国内疫情数据'
+              text: ''
             },
             tooltip: {
               trigger: 'axis'
             },
             legend: {
-              data: ['累计确诊', '现有疑似', '累计治愈', '累计死亡']
+              data: ['累计确诊', '现有疑似', '累计治愈', '累计死亡'],
             },
             grid: {
+              left: '3%',
+              right: '4%',
+              bottom: '3%',
+              containLabel: true
             },
             toolbox: {
             },
@@ -109,7 +106,7 @@ export default {
 </script>
 <style>
 #chinaLineChart {
-    width: 800px;
-    height: 600px;
+    width: 400px;
+    height: 300px;
 }
 </style>

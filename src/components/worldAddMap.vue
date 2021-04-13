@@ -29,7 +29,7 @@ const options = {
             }
         },
         data:[],
-        zoom: 1, //控制地图的大小
+        zoom: 1.2, //控制地图的大小
     }],
     visualMap: [{
         type: 'piecewise',
@@ -67,8 +67,7 @@ export default {
       jsonp('https://interface.sina.cn/news/wap/fymap2020_data.d.json',{},(err,data) => {
         if(!err) {
           //请求数据成功
-          console.log("世界地图")
-          console.log(data)
+          console.log("世界增加地图")
           let list = data.data.otherlist.map(item => ({
             name: item.name,
             value: item.conadd
@@ -83,7 +82,7 @@ export default {
 </script>
 <style>
 .worldAddChart{
-  width: 500px;
+  width: 900px;
   height: 800px;
 }
 </style>

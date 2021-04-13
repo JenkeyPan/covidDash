@@ -1,10 +1,19 @@
 <template>
-     <div class="map">
-          <div ref="mapbox" class="chart"></div>
-          <div class="map1"></div>
-          <div class="map2"></div>
-          <div class="map3"></div>
+<el-row>
+    <el-col>
+        <div class="grid-content">
+            <div class="map">
+              <!-- <div class="map1"></div>
+              <div class="map2"></div>
+              <div class="map3"></div> -->
+              
+            </div>
+            <div ref="mapbox" class="chart">
      </div>
+        </div>
+    </el-col>
+</el-row>
+     
 </template>
 <script>
 import * as echarts from 'echarts'
@@ -12,10 +21,6 @@ import 'echarts/lib/chart/map/china.js'//引入echarts中的中国地图
 import jsonp from 'jsonp'//引入jsonp
 
 const options = {
-  title: {
-    text: '累计确诊',//主标题
-    subtext: '累计确诊病例数，包含治愈、死亡'//副标题
-  },
   series: [{
     type: 'map',//地图
     // name: '确诊人数',//用于tooltip的显示{a}
@@ -25,10 +30,12 @@ const options = {
       color: '#660208',//地区名字颜色
       fontSize: 10//地区名字大小
     },
+    left: -60,
     itemStyle: {
       //areaColor: '#10aeb5',//对应地区颜色
       borderColor: 'rgba(50, 50, 50, 0.7)'//地区边框颜色
     },
+    zoom:0.8,
     emphasis: {
       label: {
         color: '#660208',//高亮状态下字体颜色
@@ -83,10 +90,15 @@ export default {
 </script>
 <style>
 .map {
-  position: relative;
-  height: 10.125rem;
+  position: relative; 
+  width: 800px;
+  height: 400px;
 }
-.map .chart {
+.chart {
+  width: 800px;
+  height: 600px;
+}
+.map  {
   position: absolute;
   top: 0;
   left: 0;
@@ -101,23 +113,23 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 6.475rem;
-  height: 6.475rem;
+  width: 26.475rem;
+  height: 26.475rem;
   background: url(../assets/map.png) no-repeat;
   background-size: 100% 100%;
-  opacity: 0.3;
+  opacity: 0.1;
 }
 .map .map2 {
-  width: 8.0375rem;
-  height: 8.0375rem;
+  width: 28.0375rem;
+  height: 28.0375rem;
   background-image: url(../assets/lbx.png);
-  opacity: 0.6;
+  opacity: 0.3;
   animation: rotate 15s linear infinite;
   z-index: 2;
 }
 .map .map3 {
-  width: 7.075rem;
-  height: 7.075rem;
+  width: 29.075rem;
+  height: 29.075rem;
   background-image: url(../assets/jt.png);
   animation: rotate1 10s linear infinite;
 }

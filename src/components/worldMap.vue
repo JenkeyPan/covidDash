@@ -1,5 +1,12 @@
 <template>
-  <div ref="worldMapBox" class = "worldChart"></div>
+<el-row>
+  <el-col>
+    <div class="grid-content bg-purple-dark">
+      <div ref="worldMapBox" class = "worldChart"></div>
+    </div>
+  </el-col>
+</el-row>
+  
 </template>
 
 <script>
@@ -29,7 +36,7 @@ const options = {
             }
         },
         data:[],
-        zoom: 1, //控制地图的大小
+        zoom: 10, //控制地图的大小
     }],
     visualMap: [{
         type: 'piecewise',
@@ -83,7 +90,7 @@ export default {
 </script>
 <style>
 .worldChart{
-  width: 500px;
+  width: 900px;
   height: 800px;
 }
 </style>
