@@ -24,7 +24,7 @@
 </el-row>
 </template>
 <script>
-import Cube from './middle/Cube'
+import Cube from './Cube'
 import $ from 'jquery'
 import jsonp from 'jsonp'
 

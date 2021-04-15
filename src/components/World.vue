@@ -20,12 +20,12 @@
 </template>
 <script>
 import Header from './Header'
-import WorldMap from './worldMap'
-import WorldAddMap from './worldAddMap'
-import WorldDigit from './worldDigit'
-import WorldAddLineChart from './worldAddLineChart'
-import WorldAddTrendLineChart from './worldAddTrendLineChart'
-import WorldTopTenBarChart from './worldTopTenBarChart'
+import WorldMap from './world/worldMap'
+import WorldAddMap from './world/worldAddMap'
+import WorldDigit from './world/worldDigit'
+import WorldAddLineChart from './world/worldAddLineChart'
+import WorldAddTrendLineChart from './world/worldAddTrendLineChart'
+import WorldTopTenBarChart from './world/worldTopTenBarChart'
 export default {
   name: "World",
   components: {

@@ -26,14 +26,14 @@
 </template>
 
 <script>
-import ChinaMap from './ChinaMap.vue'
-import lineChart from './left/lineChart.vue'
-import Digit from './middle/Digit.vue'
-import LocalAddLineChart from './left/localAddLineChart.vue'
-import NowConfirmLineChart from './left/nowConfirmLineChart';
-import AddTrendLineChart from './addTrendLineChart';
-import Header from './Header.vue'
-import ChinaNews from './chinaNews'
+import ChinaMap from './china/middle/ChinaMap'
+import lineChart from './china/left/lineChart'
+import Digit from './china/middle/Digit'
+import LocalAddLineChart from './china/left/localAddLineChart'
+import NowConfirmLineChart from './china/left/nowConfirmLineChart'
+import AddTrendLineChart from './china/right/addTrendLineChart'
+import Header from './Header'
+import ChinaNews from './china/right/chinaNews'
 export default {
   name: 'HelloWorld',
   components: {
