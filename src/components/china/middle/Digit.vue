@@ -1,31 +1,31 @@
 <template>
 <el-row >
-  <el-col :span="4">
+  <el-col :span="8">
     <div class="grid-content bg-purple">
         <Cube v-bind:info = "information.localConfirm"></Cube>
     </div>
   </el-col>
-  <el-col :span="4">
+  <el-col :span="8">
     <div class="grid-content bg-purple">
         <Cube v-bind:info = "information.nowConfirm"></Cube>
     </div>
   </el-col>
-  <el-col :span="4">
+  <el-col :span="8">
     <div class="grid-content bg-purple">
         <Cube v-bind:info = "information.confirm"></Cube>
     </div>
   </el-col>
-  <el-col :span="4">
+  <el-col :span="8">
     <div class="grid-content bg-purple">
         <Cube v-bind:info = "information.noInfect"></Cube>
     </div>
   </el-col>
-  <el-col :span="4">
+  <el-col :span="8">
     <div class="grid-content bg-purple">
         <Cube v-bind:info = "information.importedCase"></Cube>
     </div>
   </el-col>
-  <el-col :span="4">
+  <el-col :span="8">
     <div class="grid-content bg-purple">
         <Cube v-bind:info = "information.dead"></Cube>
     </div>
@@ -94,7 +94,6 @@ export default {
                         addNum: all.chinaAdd.importedCase,
                         num: all.chinaTotal.importedCase
                     }
-                    console.log(confirm)
                     //将获取的信息存取到information中
                     that.$set(that.information,"localConfirm",localConfirm)
                     that.$set(that.information,"dead", dead)
