@@ -13,7 +13,6 @@ export default {
   name: 'ChinaVaccineLineChart',
   mounted(){
     this.getChinaVaccineData()
-
   },
   methods:{
     getChinaVaccineData(){
