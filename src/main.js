@@ -7,6 +7,8 @@ import ElementUI from 'element-ui'
 import World from './components/World'
 import 'element-ui/lib/theme-chalk/index.css'
 import $ from 'jquery'
+import axios from 'axios'
+Vue.prototype.$axios= axios
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)

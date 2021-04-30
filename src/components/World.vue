@@ -1,6 +1,6 @@
 <template>
   <div> 
-    <Header/>
+    <NavMenu/>
     <el-row>
       <el-col :span="16"><div class="grid-content bg-purple">
         <WorldDigit/>
@@ -26,6 +26,7 @@ import WorldDigit from './world/worldDigit'
 import WorldAddLineChart from './world/worldAddLineChart'
 import WorldAddTrendLineChart from './world/worldAddTrendLineChart'
 import WorldTopTenBarChart from './world/worldTopTenBarChart'
+import NavMenu from './NavMenu'
 export default {
   name: "World",
   components: {
@@ -35,7 +36,8 @@ export default {
     WorldAddLineChart,
     WorldAddTrendLineChart,
     WorldTopTenBarChart,
-    Header
+    Header,
+    NavMenu
   }
 }
 </script>

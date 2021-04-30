@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <Header/>
+    <NavMenu/>
     <el-row>
       <el-col :span="8">
         <div class="grid-content bg-purple">
@@ -22,6 +22,7 @@
         </div>
       </el-col>
     </el-row>
+    <VaccineMap/>
   </div>
 </template>
 
@@ -34,6 +35,8 @@ import NowConfirmLineChart from './china/left/nowConfirmLineChart'
 import AddTrendLineChart from './china/right/addTrendLineChart'
 import Header from './Header'
 import ChinaNews from './china/right/chinaNews'
+import NavMenu from './NavMenu'
+import VaccineMap from './vaccine/vaccineMap'
 export default {
   name: 'HelloWorld',
   components: {
@@ -44,7 +47,9 @@ export default {
     LocalAddLineChart,
     NowConfirmLineChart,
     AddTrendLineChart,
-    ChinaNews
+    ChinaNews,
+    NavMenu,
+    VaccineMap
   }
 }
 </script>
