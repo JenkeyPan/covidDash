@@ -3,42 +3,53 @@
       :data="tableData"
       style="width: 100%">
       <el-table-column
-        prop="date"
-        label="日期"
-        width="180">
+        prop="country"
+        label="国家"
+        width="240">
       </el-table-column>
       <el-table-column
-        prop="name"
-        label="姓名"
-        width="180">
-      </el-table-column>
-      <el-table-column
-        prop="address"
-        label="地址">
+        prop="content"
+        label="使用疫苗情况"
+         :formatter="wrapText">
       </el-table-column>
     </el-table>
 </template>
 <script>
+import data from '@/assets/vaccineCountry.json'
 export default {
   name: 'VaccineTable',
   mounted(){
     this.getVaccineTableData()
   },
+  data(){
+    return{
+      tableData:[
+
+      ]
+    }
+  },
   methods:{
     getVaccineTableData(){
-      this.$axios({
-                method:'get',
-                url:'http://v.qq.com/cache/wuji_public/object?appid=yimiao&schemaid=vaccine_progress_foreign&schemakey=1091e06cbb704b40963accd816770461&size=500&sort=rank&order=asc',
-            }).then((response) =>{          //这里使用了ES6的语法
-                console.log(response)       //请求成功返回的数据
-            }).catch((error) =>{
-                console.log(error,"疫情digit读取失败")       //请求失败返回的数据
-            })
-      }
+        for(let i = 0; i < data.data.length; i++){
+           let tableUnit = {
+             country: data.data[i].country,
+             src: data.data[i].flag,
+             content: data.data[i].content
+          }
+          this.tableData.push(tableUnit)
+        }
+       
+      },
+      wrapText: function(row, column, cellValue){
+        return cellValue.replace(",","\n");
+      },
     }
+
   
 }
 </script>
 <style>
-
+.el-table .cell{
+  white-space: pre-line;
+}
 </style>
