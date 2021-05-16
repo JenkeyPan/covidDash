@@ -47,14 +47,6 @@ export default {
                 method:'get',
                 url:'https://view.inews.qq.com/share/topic_news?id=TWF202011100035496L',
             }).then((response) =>{          //这里使用了ES6的语法
-                // let allNews = response.data.results;
-                // for(let i = 0; i < allNews.length; i++){
-                //   let news = {
-                //     title: allNews[i].title,
-                //     article: allNews[i].summary
-                //   }
-                //   this.jiaodian.push(news)
-                // }
                 let allNews = response.data.cells
                 console.log(response)      
                 for(let i = 0; i < allNews.length; i++){

@@ -27,5 +27,15 @@ export default {
 }
 </script>
 <style>
-
+.el-collapse-item__header{
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+}
+.el-collapse-item__wrap{
+  background-color: transparent;
+}
+.el-collapse-item__content{
+  color: aliceblue;
+}
 </style>

@@ -43,4 +43,13 @@ export default {
 .summary{
   font-size: 16px;
 }
+.el-collapse-item__wrap{
+  background-color: rgb(0 0 0 / 10%);
+}
+.el-collapse-item__content{
+  color: aliceblue;
+}
+.el-collapse-item__header.is-active{
+  border-bottom-color:rgba(1, 67, 248, 0.548)
+}
 </style>

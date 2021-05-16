@@ -22,7 +22,6 @@
         </div>
       </el-col>
     </el-row>
-    <VaccineMap/>
   </div>
 </template>
 
@@ -36,7 +35,7 @@ import AddTrendLineChart from './china/right/addTrendLineChart'
 import Header from './Header'
 import ChinaNews from './china/right/chinaNews'
 import NavMenu from './NavMenu'
-import VaccineMap from './vaccine/vaccineMap'
+import VaccineMap from './vaccineMap'
 export default {
   name: 'HelloWorld',
   components: {
@@ -53,7 +52,6 @@ export default {
   }
 }
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>

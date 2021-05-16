@@ -52,4 +52,10 @@ export default {
 .el-table .cell{
   white-space: pre-line;
 }
+.el-table th, .el-table tr{
+  background-color: #0d0132;
+}
+.el-table{
+  color: azure;
+}
 </style>
